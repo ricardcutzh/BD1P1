@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+Route::name('main')->get('/', function () {
     return view('LogIn');
+});
+
+
+//RUTA PRA LOGRAR REALIZAR EL LOGIN
+Route::name('log_in')->post('/Log_In','UsuarioController@login');
+Route::name('see_user')->get('/User/Show', 'UsuarioController@show');
+Route::name('index')->get('/Dashboard', 'UsuarioController@index');
+
+//RUTA TEMPORAL
+Route::get('/temp', function(){
+  return view('User/showUs');
 });
