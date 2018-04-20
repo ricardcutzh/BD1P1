@@ -13,6 +13,7 @@
 @endsection
 
 @section('contenido')
+<div class="animated fadeIn">
   <div class="col-sm-12">
       <div class="alert  alert-success alert-dismissible fade show" role="alert">
         <span class="badge badge-pill badge-success">Bienvenido</span> Dashboard de Administracion del Sistema.
@@ -190,5 +191,5 @@
                     </div>
                 </div>
             </div>
-
+</div>
 @endsection

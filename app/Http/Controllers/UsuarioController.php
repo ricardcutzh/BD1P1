@@ -91,7 +91,46 @@ class UsuarioController extends Controller
 
     public function show(Request $request)
     {
-      $users = Usuario::all();
+      $users = Usuario::orderBy("ID_USUARIO",'desc')->paginate(12);
       return view("User/showUs")->with(['users'=>$users]);
+    }
+
+    public function register(Request $request)
+    {
+      $usuario = new Usuario();
+      $resultado = true;
+      $mensaje = "correcto";
+      try {
+        Usuario::create(['NOMBRE'=>$request->get('Usuario'), 'PASSW'=>$request->get('Password')]);
+        return redirect()->route('see_user');
+      } catch (\Illuminate\Database\QueryException $e) {
+        $resultado = false;
+        $mensaje = "El Nombre de Usuario ".$request->get('Usuario')." ya existe...";
+        $data = array(
+          'resultado' => $resultado,
+          'mensaje' => $mensaje
+        );
+        return view('User/NewUser', compact('data'));
+      }
+    }
+
+    public function EditUsuario($ID_USUARIO)
+    {
+      $usuario = Usuario::find($ID_USUARIO);
+      return view('User/EditUs')->with(['usuario' => $usuario]);
+    }
+
+    public function Update(Usuario $usuario, Request $request)
+    {
+      $usuario->NOMBRE = $request->get('Usuario');
+      $usuario->PASSW = $request->get('Password');
+      $usuario->save();
+      return redirect()->route('see_user');
+    }
+
+    public function Delete(Usuario $usuario)
+    {
+      $usuario->delete();
+      return redirect()->route('see_user');
     }
 }

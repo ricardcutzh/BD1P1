@@ -22,6 +22,7 @@
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="{{ asset('scss/style.css')}}">
     <link href="{{ asset('css/lib/vector-map/jqvmap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/pag.css')}}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -49,7 +50,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Usuarios</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nuevo Usuario</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{route('add_user_view')}}">Agregar Nuevo Usuario</a></li>
                             <li><i class="ti ti-eye"></i><a href="{{route('see_user')}}">Ver Usuarios</a></li>
                         </ul>
                     </li>
@@ -292,18 +293,20 @@
         </div>
 
        <div class="content mt-3">
-            <div class="animated fadeIn">
+            <!--<div class="animated fadeIn">-->
               @yield('contenido')
-            </div>
+            <!--</div>-->
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
 
-
+    @yield('scripts')
     <script src="{{ asset('js/vendor/jquery-2.1.4.min.js')}}"></script>
     <script src="{{ asset('js/popper.min.js')}}"></script>
     <script src="{{ asset('js/plugins.js')}}"></script>
     <script src="{{ asset('js/main.js')}}"></script>
+
+
 
     <script src="{{ asset('js/lib/chart-js/Chart.bundle.js')}}"></script>
     <script src="{{ asset('js/dashboard.js')}}"></script>

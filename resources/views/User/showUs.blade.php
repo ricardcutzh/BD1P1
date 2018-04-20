@@ -15,6 +15,8 @@
 @endsection
 
 @section('contenido')
+<div class="animated">
+  <div class="animated">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -34,14 +36,27 @@
                 <tr>
                   <td>{{$user->NOMBRE}}</td>
                   <td>{{$user->PASSW}}</td>
-                  <td>Edit</td>
-                  <td>Delete</td>
+                  <td><a href="{{ route('editar_us',['usuario'=>$user->ID_USUARIO])}}" class="btn btn-warning mb-1" value="{{$user->ID_USUARIO}}"><li class="fa fa-magic"></li> Editar</a></td>
+                  <form action="{{ route('delete_us',['usuario'=>$user->ID_USUARIO])}}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <td><button class="btn btn-danger mb-1" ><li class="fa fa-times"></li> Eliminar</button></td>
+                  </form>
                 </tr>
               @endforeach
+              {{$users->render()}}
             </tbody
           </table>
         </div>
       </div>
     </div>
   </div>
+</div>
+@endsection
+
+@section('scripts')
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 @endsection
