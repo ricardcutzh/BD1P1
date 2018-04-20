@@ -60,8 +60,8 @@
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Paises</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nuevo Pais</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Paises</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{route('add_pais_view')}}">Agregar Nuevo Pais</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_pais')}}">Ver Paises</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
