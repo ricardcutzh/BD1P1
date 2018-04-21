@@ -1,17 +1,17 @@
 @extends('Layouts.layout')
 
 @section('title')
-  ICE | Pais
+  ICE | Regiones de {{$pais->NOMBRE}}
 @endsection
 
 @section('pag_title')
-  Ver Paises
+  Ver Regiones de {{$pais->NOMBRE}}
 @endsection
 
 @section('path_pag')
   <li><a href="#">Dashboard</a></li>
   <li><a href="#">Paises</a></li>
-  <li class="active">Ver Paises</li>
+  <li class="active">Regiones de {{$pais->NOMBRE}}</li>
 @endsection
 
 @section('contenido')
@@ -21,21 +21,21 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-            <strong class="card-title">Paises</strong>
+            <strong class="card-title">Regiones</strong>
         </div>
         <div class="card-body">
           <table class="table table-striped table-bordered">
             <thead>
-              <th>Nombre del Pais</th>
-              <th>Visualizar Regiones</th>
+              <th>Nombre de la Region</th>
+              <th>Pais Asociado</th>
               <th>Editar</th>
               <th>Eliminar</th>
             </thead>
             <tbody>
-              @foreach ($paises as $pais)
+              @foreach ($regiones as $region)
                 <tr>
+                  <td>{{$region->NOMBRE}}</td>
                   <td>{{$pais->NOMBRE}}</TD>
-                  <td><a href="{{ route('show_especific_Regions', ['pais'=>$pais->ID_PAIS]) }}" class="btn btn-secondary mb-1" value=""><li class="fa fa-eye"></li> Ver Regiones Asociadas </a></td>
                   <td><a href="{{ route('editar_pais',['pais'=>$pais->ID_PAIS])}}" class="btn btn-warning mb-1" value=""><li class="fa fa-magic"></li> Editar</a></td>
                   <form action="{{ route('delete_pais',['pais'=>$pais->ID_PAIS])}}" method="post">
                     {{ csrf_field() }}
@@ -44,7 +44,7 @@
                   </form>
                 </tr>
               @endforeach
-              {{$paises->render()}}
+              {{$regiones->render()}}
             </tbody
           </table>
         </div>

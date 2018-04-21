@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Region extends Model
 {
+  //LLAVE DE LA REGION
+  protected $primaryKey = "ID_REGION";
+
   //MODELO PARA EL MANEJO DE LAS REGIONES
   protected $table = 'REGION';
 
@@ -15,5 +18,5 @@ class Region extends Model
   //DEFINIMOS PARAMETROS PARA PODER LLENAR
   protected $fillable = ['NOMBRE','ID_PAIS'];
 
-  
+
 }

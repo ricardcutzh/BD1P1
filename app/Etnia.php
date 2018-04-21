@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etnia extends Model
 {
+  //DEFINIENDO LA LLAVE PRIMARIA
+  protected $primaryKey = "ID_ETNIA";
+
   //MODELO PARA EL MANEJO DE LOS SEXOS
   protected $table = 'ETNIA';
 

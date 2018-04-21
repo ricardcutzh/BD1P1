@@ -68,7 +68,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Regiones</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nueva Region</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Regiones</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_regions')}}">Ver Regiones</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
@@ -119,16 +119,16 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Generos (Sexo)</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nuevo Registro</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Registro</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{ route('add_sexo_view') }}">Agregar Nuevo Registro</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_sexos')}}">Ver Registro</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Etnias</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nueva Etnia</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Etnias</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{ route('add_etnia_view') }}">Agregar Nueva Etnia</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_etnias')}}">Ver Etnias</a></li>
                         </ul>
                     </li>
 

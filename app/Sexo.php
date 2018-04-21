@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sexo extends Model
 {
+  //LLAVE PRIMARIA DE TABLA
+  protected $primaryKey = "ID_SEXO";
+
   //MODELO PARA EL MANEJO DE LOS SEXOS
   protected $table = 'SEXO';
 

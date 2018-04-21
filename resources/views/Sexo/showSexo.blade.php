@@ -1,17 +1,17 @@
 @extends('Layouts.layout')
 
 @section('title')
-  ICE | Pais
+  ICE | Sexo
 @endsection
 
 @section('pag_title')
-  Ver Paises
+  Ver Sexos
 @endsection
 
 @section('path_pag')
   <li><a href="#">Dashboard</a></li>
-  <li><a href="#">Paises</a></li>
-  <li class="active">Ver Paises</li>
+  <li><a href="#">Sexos</a></li>
+  <li class="active">Ver Sexos</li>
 @endsection
 
 @section('contenido')
@@ -21,30 +21,28 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-            <strong class="card-title">Paises</strong>
+            <strong class="card-title">Sexos</strong>
         </div>
         <div class="card-body">
           <table class="table table-striped table-bordered">
             <thead>
-              <th>Nombre del Pais</th>
-              <th>Visualizar Regiones</th>
+              <th>Sexo</th>
               <th>Editar</th>
               <th>Eliminar</th>
             </thead>
             <tbody>
-              @foreach ($paises as $pais)
+              @foreach ($sexos as $sexo)
                 <tr>
-                  <td>{{$pais->NOMBRE}}</TD>
-                  <td><a href="{{ route('show_especific_Regions', ['pais'=>$pais->ID_PAIS]) }}" class="btn btn-secondary mb-1" value=""><li class="fa fa-eye"></li> Ver Regiones Asociadas </a></td>
-                  <td><a href="{{ route('editar_pais',['pais'=>$pais->ID_PAIS])}}" class="btn btn-warning mb-1" value=""><li class="fa fa-magic"></li> Editar</a></td>
-                  <form action="{{ route('delete_pais',['pais'=>$pais->ID_PAIS])}}" method="post">
+                  <td>{{$sexo->NOMBRE}}</TD>
+                  <td><a href="{{ route('editar_sexo',['sexo'=>$sexo->ID_SEXO])}}" class="btn btn-warning mb-1" value=""><li class="fa fa-magic"></li> Editar</a></td>
+                  <form action="{{ route('delete_sexo',['sexo'=>$sexo->ID_SEXO])}}" method="post">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <td><button class="btn btn-danger mb-1" ><li class="fa fa-times"></li> Eliminar</button></td>
                   </form>
                 </tr>
               @endforeach
-              {{$paises->render()}}
+              {{$sexos->render()}}
             </tbody
           </table>
         </div>

@@ -1,17 +1,17 @@
 @extends('Layouts.layout')
 
 @section('title')
-  ICE | Paises
+  ICE | Etnias
 @endsection
 
 @section('pag_title')
-  Ver Paises
+  Ver Etnias
 @endsection
 
 @section('path_pag')
   <li><a href="#">Dashboard</a></li>
-  <li><a href="#">Pais</a></li>
-  <li class="active">Agregar Nuevo Pais</li>
+  <li><a href="#">Etnia</a></li>
+  <li class="active">Agregar Nueva Etnia</li>
 @endsection
 
 @section('contenido')
@@ -25,11 +25,11 @@
         </div>
         <div class="card-body">
           <div class="card-title">
-              <h3 class="text-center">Registrar Nuevo Pais</h3>
+              <h3 class="text-center">Registrar Nueva Etnia</h3>
           </div>
           <hr>
           <!-- FORMULARIO DE USUARIO -->
-          <form action="{{route('insert_pais')}}" method="post">
+          <form action="{{ route('insert_etnia') }}" method="post">
             {{ csrf_field() }}
             @if(!empty($data))
               @if($data['resultado']==false)
@@ -44,13 +44,13 @@
                 </ul>
             </div>
             <div class="form-group">
-                <label for="cc-payment" class="control-label mb-1">Nuevo Pais</label>
-                <input required  name="Pais" value=""  type="text" class="form-control" aria-required="true">
+                <label for="cc-payment" class="control-label mb-1">Nueva Etnia</label>
+                <input required  name="Etnia" value=""  type="text" class="form-control" aria-required="true">
             </div>
             <div>
                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                     <i class="fa fa-check fa-lg"></i>&nbsp;
-                    <span id="payment-button-amount">Registrar Pais</span>
+                    <span id="payment-button-amount">Registrar Etnia</span>
                     <span id="payment-button-sending" style="display:none;">Sending…</span>
                 </button>
             </div>
