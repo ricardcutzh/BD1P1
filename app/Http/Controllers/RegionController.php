@@ -29,27 +29,42 @@ class RegionController extends Controller
       return view("Region/showRegion")->with(['regiones'=>$regiones]);
     }
 
+    public function newView()
+    {
+      $paises = Pais::orderBy('NOMBRE','desc')->get();
+      return view('Region/NewRegion')->with(['paises'=>$paises]);
+    }
+
     //METE UNA NUEVA ETNIA EN LA BASSE DE DATOS
     public function Insert(Request $request)
     {
-
+      Region::create(['NOMBRE'=>$request->get('Region'), 'ID_PAIS'=>$request->get('Pais')]);
+      return redirect()->route('show_especific_Regions',['pais'=>$request->get('Pais')]);
     }
 
     //RETORNA LA VISTA DE EDICION DEL PAIS
     public function EditView($ID_REGION)
     {
-
+      $region = Region::find($ID_REGION);
+      $asociado = Pais::find($region->ID_PAIS);
+      $paises = Pais::where('ID_PAIS','!=', $region->ID_PAIS)->get();
+      return view('Region/EditRegion')->with(['region'=>$region, 'asociado'=>$asociado, 'paises'=>$paises]);
     }
 
     //FUNCION QUE SE ENCARGA DE LA ACTUALIZACION DE LOS DATOS DE LA BASE DE DATOS
     public function Update(Region $region, Request $request)
     {
-
+      $region->NOMBRE = $request->get('Region');
+      $region->ID_PAIS = $request->get('Pais');
+      $region->save();
+      return redirect()->route('show_especific_Regions',['pais'=>$request->get('Pais')]);
     }
 
     //FUNCION QUE ELIMINA LA REGION
     public function Delete(Region $region)
     {
 
+      $region->delete();
+      return redirect()->route('show_especific_Regions',['pais'=>$region->ID_PAIS]);
     }
 }

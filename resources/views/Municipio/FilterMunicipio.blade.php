@@ -1,17 +1,17 @@
 @extends('Layouts.layout')
 
 @section('title')
-  ICE | Regiones de {{$pais->NOMBRE}}
+  ICE | Municipios de {{$departamento->NOMBRE}}
 @endsection
 
 @section('pag_title')
-  Ver Regiones de {{$pais->NOMBRE}}
+  Ver Municipios de {{$departamento->NOMBRE}}
 @endsection
 
 @section('path_pag')
   <li><a href="#">Dashboard</a></li>
-  <li><a href="#">Paises</a></li>
-  <li class="active">Regiones de {{$pais->NOMBRE}}</li>
+  <li><a href="#">Municipios</a></li>
+  <li class="active">Municipios de {{$departamento->NOMBRE}}</li>
 @endsection
 
 @section('contenido')
@@ -21,32 +21,30 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-            <strong class="card-title">Regiones</strong>
+            <strong class="card-title">Municipio</strong>
         </div>
         <div class="card-body">
           <table class="table table-striped table-bordered">
             <thead>
-              <th>Nombre de la Region</th>
-              <th>Pais Asociado</th>
-              <th>Ver Departamentos del la Region</th>
+              <th>Municipio</th>
+              <th>Departamento Asociada</th>
               <th>Editar</th>
               <th>Eliminar</th>
             </thead>
             <tbody>
-              @foreach ($regiones as $region)
+              @foreach ($municipios as $municipio)
                 <tr>
-                  <td>{{$region->NOMBRE}}</td>
-                  <td>{{$pais->NOMBRE}}</TD>
-                  <td><a href="{{ route('show_especific_Departamentos', ['region'=>$region->ID_REGION]) }}" class="btn btn-secondary mb-1" value=""><li class="fa fa-eye"></li> Ver Departamentos Asociados </a></td>
-                  <td><a href="{{ route('editar_region',['pais'=>$region->ID_REGION])}}" class="btn btn-warning mb-1" value=""><li class="fa fa-magic"></li> Editar</a></td>
-                  <form action="{{ route('delete_region',['pais'=>$region->ID_REGION])}}" method="post">
+                  <td>{{$municipio->NOMBRE}}</td>
+                  <td>{{$departamento->NOMBRE}}</TD>
+                  <td><a href="{{ route('editar_municipio',['municipio'=>$municipio->ID_MUNICIPIO])}}" class="btn btn-warning mb-1" value=""><li class="fa fa-magic"></li> Editar</a></td>
+                  <form action="{{ route('delete_municipio',['municipio'=>$municipio->ID_MUNICIPIO])}}" method="post">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <td><button class="btn btn-danger mb-1" ><li class="fa fa-times"></li> Eliminar</button></td>
                   </form>
                 </tr>
               @endforeach
-              {{$regiones->render()}}
+              {{$municipios->render()}}
             </tbody
           </table>
         </div>

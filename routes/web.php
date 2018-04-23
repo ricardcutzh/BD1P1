@@ -60,18 +60,36 @@ Route::name('insert_sexo')->post('/Register/Sexo', 'SexoController@Insert');
 Route::name('delete_sexo')->delete('/Sexo/{sexo}/Delete', 'SexoController@Delete');
 //-----------------------------
 //----------REGIONES-----------
-Route::name('show_especific_Regions')->get('/Pais/Regions/{pais}', 'RegionController@showEspecific');
-Route::name('see_regions')->get('/Region/Show', 'RegionController@show');
-Route::name('add_region_view')->get('/Add/Region', function(){
-  return view('Region/NewRegion');
-});
-Route::name('editar_region')->get('/Region/Edit/{region}', 'RegionController@EditView');
-Route::name('edit_region')->post('/Region/{region}/Update', 'RegionController@Update');
-Route::name('insert_region')->post('/Register/Region', 'RegionController@Insert');
-Route::name('delete_region')->delete('/Region/{region}/Delete', 'RegionController@Delete');
+Route::name('show_especific_Regions')->get('/Pais/Regions/{pais}', 'RegionController@showEspecific');//YA
+Route::name('see_regions')->get('/Region/Show', 'RegionController@show');//YA
+Route::name('add_region_view')->get('/Add/Region', 'RegionController@newView');//YA
+Route::name('editar_region')->get('/Region/Edit/{region}', 'RegionController@EditView');//YA
+Route::name('edit_region')->post('/Region/{region}/Update', 'RegionController@Update');//YA
+Route::name('insert_region')->post('/Register/Region', 'RegionController@Insert');//YA
+Route::name('delete_region')->delete('/Region/{region}/Delete', 'RegionController@Delete');//YA
 //-------------------------------
+
+//---------DEPARTAMENTOS------------
+Route::name('show_especific_Departamentos')->get('/Regiones/Departamentos/{region}', 'DepartamentoController@showEspecific');
+Route::name('see_departamentos')->get('/Departamento/Show', 'DepartamentoController@show');
+Route::name('add_departamento_view')->get('/Add/Departamento', 'DepartamentoController@newView');
+Route::name('editar_departamento')->get('/Departamento/Edit/{departamento}', 'DepartamentoController@EditView');
+Route::name('edit_departamento')->post('/Departamento/{departamento}/Update', 'DepartamentoController@Update');
+Route::name('insert_departamento')->post('/Register/Departamento', 'DepartamentoController@Insert');
+Route::name('delete_departamento')->delete('/Departamento/{departamento}/Delete', 'DepartamentoController@Delete');
+//----------------------------------
+
+//----------MUNICIPIOS---------------
+Route::name('show_especific_municipios')->get('/Departamentos/Municipios/{departamento}', 'MunicipioController@showEspecific');
+Route::name('see_municipio')->get('/Municipio/Show', 'MunicipioController@show');
+Route::name('add_municipio_view')->get('/Add/Municipio', 'MunicipioController@newView');
+Route::name('editar_municipio')->get('/Municipio/Edit/{municipio}', 'MunicipioController@EditView');
+Route::name('edit_municipio')->post('/Municipio/{municipio}/Update', 'MunicipioController@Update');
+Route::name('insert_municipio')->post('/Register/Municipio', 'MunicipioController@Insert');
+Route::name('delete_municipio')->delete('/Municipio/{municipio}/Delete', 'MunicipioController@Delete');
+//-----------------------------------
 
 //RUTA TEMPORAL
 Route::get('/temp', function(){
-  return view('Pais/showPais');
+  return view('Region/NewRegion');
 });

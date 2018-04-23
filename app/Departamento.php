@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Departamento extends Model
 {
+  //ID DE LA TABLA
+  protected $primaryKey = "ID_DEPARTAMENTO";
   //MODELO PARA EL MANEJO DE LOS DEPARTAMENTOS
   protected $table = 'DEPARTAMENTO';
 

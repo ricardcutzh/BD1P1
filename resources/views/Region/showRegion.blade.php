@@ -28,6 +28,7 @@
             <thead>
               <th>Region</th>
               <th>Pais Asociado</th>
+              <th>Ver Departamentos de la Region </th>
               <th>Editar</th>
               <th>Eliminar</th>
             </thead>
@@ -36,8 +37,9 @@
                 <tr>
                   <td>{{$region->NOMBRE}}</td>
                   <td>{{$region->COUNTRY}}</td>
-                  <td><a href="" class="btn btn-warning mb-1" value=""><li class="fa fa-magic"></li> Editar</a></td>
-                  <form action="" method="post">
+                  <td><a href="{{ route('show_especific_Departamentos', ['region'=>$region->ID_REGION]) }}" class="btn btn-secondary mb-1" value=""><li class="fa fa-eye"></li> Ver Departamentos Asociados </a></td>
+                  <td><a href="{{ route('editar_region',['pais'=>$region->ID_REGION])}}" class="btn btn-warning mb-1" value=""><li class="fa fa-magic"></li> Editar</a></td>
+                  <form action="{{ route('delete_region',['pais'=>$region->ID_REGION])}}" method="post">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <td><button class="btn btn-danger mb-1" ><li class="fa fa-times"></li> Eliminar</button></td>

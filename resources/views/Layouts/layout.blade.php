@@ -67,22 +67,22 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Regiones</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nueva Region</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{route('add_region_view')}}">Agregar Nueva Region</a></li>
                             <li><i class="ti ti-eye"></i><a href="{{route('see_regions')}}">Ver Regiones</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Departamentos</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nuevo Departamento</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Departamentos</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{route('add_departamento_view')}}">Agregar Nuevo Departamento</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_departamentos')}}">Ver Departamentos</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Municipios</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nuevo Municipio</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Municipios</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{route('add_municipio_view')}}">Agregar Nuevo Municipio</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_municipio')}}">Ver Municipios</a></li>
                         </ul>
                     </li>
 
