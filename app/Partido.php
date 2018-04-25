@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partido extends Model
 {
+  //LLAVE PRIMARIA DE LA ELECCION
+  protected $primaryKey = "ID_PARTIDO";
+  
   //MODELO PARA EL MANEJO DE LOS DPARTIDOS
   protected $table = 'PARTIDO';
 

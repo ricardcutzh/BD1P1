@@ -89,6 +89,24 @@ Route::name('insert_municipio')->post('/Register/Municipio', 'MunicipioControlle
 Route::name('delete_municipio')->delete('/Municipio/{municipio}/Delete', 'MunicipioController@Delete');
 //-----------------------------------
 
+//-----------PARTIDOS---------------
+Route::name('see_partidos')->get('/Partido/Show', 'PartidoController@show');
+Route::name('add_partido_view')->get('/Add/Partido', 'PartidoController@newView');
+Route::name('editar_partido')->get('/Partido/Edit/{partido}', 'PartidoController@EditView');
+Route::name('edit_partido')->post('/Partido/{partido}/Update', 'PartidoController@Update');
+Route::name('insert_partido')->post('/Register/Partido', 'PartidoController@Insert');
+Route::name('delete_partido')->delete('/Partido/{partido}/Delete', 'PartidoController@Delete');
+//----------------------------------
+
+//-----------ELECCIONES--------------
+Route::name('see_elecciones')->get('/Eleccion/Show', 'EleccionController@show');
+Route::name('add_eleccion_view')->get('/Add/Eleccion', 'EleccionController@newView');
+Route::name('editar_eleccion')->get('/Eleccion/Edit/{eleccion}', 'EleccionController@EditView');
+Route::name('edit_eleccion')->post('/Eleccion/{eleccion}/Update', 'EleccionController@Update');
+Route::name('insert_eleccion')->post('/Register/Eleccion', 'EleccionController@Insert');
+Route::name('delete_eleccion')->delete('/Eleccion/{eleccion}/Delete', 'EleccionController@Delete');
+//-----------------------------------
+
 //RUTA TEMPORAL
 Route::get('/temp', function(){
   return view('Region/NewRegion');

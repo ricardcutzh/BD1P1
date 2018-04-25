@@ -91,16 +91,16 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Partidos</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nuevo Partido</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Partidos</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{route('add_partido_view')}}">Agregar Nuevo Partido</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_partidos')}}">Ver Partidos</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Elecciones</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nueva Eleccion</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Elecciones</a></li>
+                            <li><i class="ti ti-plus"></i><a href="{{route('add_eleccion_view')}}">Agregar Nueva Eleccion</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_elecciones')}}">Ver Elecciones</a></li>
                         </ul>
                     </li>
 
