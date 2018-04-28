@@ -107,6 +107,11 @@ Route::name('insert_eleccion')->post('/Register/Eleccion', 'EleccionController@I
 Route::name('delete_eleccion')->delete('/Eleccion/{eleccion}/Delete', 'EleccionController@Delete');
 //-----------------------------------
 
+//----------DETALLES_VOTOS
+Route::name('see_detalles')->get('/Detalles_votos/Show', 'DetalleController@show');
+Route::name('see_esp_det')->get('/Detalles_votos/Show/{municipio}', 'DetalleController@showEspecific');
+//------------------------
+
 //RUTA TEMPORAL
 Route::get('/temp', function(){
   return view('Region/NewRegion');

@@ -28,6 +28,7 @@
             <thead>
               <th>Municipio</th>
               <th>Departamento Asociado</th>
+              <th>Ver Detalle de Votos</th>
               <th>Editar</th>
               <th>Eliminar</th>
             </thead>
@@ -36,6 +37,7 @@
                 <tr>
                   <td>{{$municipio->NOMBRE}}</td>
                   <td>{{$municipio->DEPA}}</td>
+                  <td><a href="{{route('see_esp_det',['municipio'=>$municipio->ID_MUNICIPIO])}}" class="btn btn-secondary mb-1" value=""><li class="fa fa-eye"></li> Ver Desgloce de Votos</a></td>
                   <td><a href="{{ route('editar_municipio',['municipio'=>$municipio->ID_MUNICIPIO])}}" class="btn btn-warning mb-1" value=""><li class="fa fa-magic"></li> Editar</a></td>
                   <form action="{{ route('delete_municipio',['municipio'=>$municipio->ID_MUNICIPIO])}}" method="post">
                     {{ csrf_field() }}

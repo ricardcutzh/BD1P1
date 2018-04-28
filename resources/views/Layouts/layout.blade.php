@@ -108,7 +108,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Estadisticas de Elecciones</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="ti ti-plus"></i><a href="ui-buttons.html">Agregar Nueva Estadistica</a></li>
-                            <li><i class="ti ti-eye"></i><a href="ui-badges.html">Ver Estadisticas</a></li>
+                            <li><i class="ti ti-eye"></i><a href="{{route('see_detalles')}}">Ver Estadisticas</a></li>
                         </ul>
                     </li>
 
